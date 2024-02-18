@@ -25,3 +25,18 @@ insert into SAILORS values (1,'Hemanth',5,20),(2,'Maralingeshwar',4,21), (3,'Raj
 insert into BOATS values (11,'BMW','Blue'),(12,'Audi','Red'), (13,'Jaguar','White'), (14,'Tata','Green');
 
 insert into RESERVES values (1,11,'18-02-2024'),(1,13,'19-02-2024'), (2,12,'20-02-2024'), (3,11,'21-02-2024');
+
+--1st query
+select distinct Sname FROM SAILORS
+inner join RESERVES 
+ON SAILORS.Sid = RESERVES.Sid;
+
+--2nd query
+select sid from RESERVES 
+inner join BOATS
+on RESERVES.Bid = BOATS.bid
+where colour='Red' or colour='Green';
+
+--3rd query
+select sid from SAILORS
+where sid NOT IN (select sid from RESERVES);
