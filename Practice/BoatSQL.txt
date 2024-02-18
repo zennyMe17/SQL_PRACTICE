@@ -15,12 +15,12 @@ create table BOATS(
 create table RESERVES(
 	Sid int,
   	Bid int,
-  	dat varchar(50) NOT NULL PRIMARY KEY,
+  	r_date varchar(50) NOT NULL PRIMARY KEY,
   	FOREIGN KEY(Sid) REFERENCES SAILORS(Sid),
   	FOREIGN KEY(Bid) REFERENCES BOATS(Bid)
 );
 
-insert into RESERVES values (1,'Hemanth',5,20),(2,'Maralingeshwar',4,21), (3,'Rajath',3,20), (4,'Namokar',2,21);
+insert into SAILORS values (1,'Hemanth',5,20),(2,'Maralingeshwar',4,21), (3,'Rajath',3,20), (4,'Namokar',2,21);
 
 insert into BOATS values (11,'BMW','Blue'),(12,'Audi','Red'), (13,'Jaguar','White'), (14,'Tata','Green');
 
