@@ -1,0 +1,19 @@
+create table SUPPLIER (
+  Sid int primary key,
+  Sname varchar(25),
+  Address varchar(25)
+);
+
+create table PART(
+	PID int primary key,
+  	Pname varchar(25),
+ 	Color varchar(25)
+);
+
+create table SHIPMENT(
+  	Sid int, 
+	PID int,
+  	Cost int,
+  	foreign key (Sid) references SUPPLIER(Sid),
+  	foreign key (PID) references PART(PID)
+);
