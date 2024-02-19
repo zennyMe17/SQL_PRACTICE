@@ -19,8 +19,14 @@ create table EMPLOYEE (
 );
 
 create table  DEPENDENT(
-	Dname varchar(25),
+	Dnumber varchar(25),
   	ESSN int,
   	foreign key (ESSN) references EMPLOYEE(SSN),
-  	foreign key (Dname) references DEPARTMENT(Dnumber)
+  	foreign key (Dnumber) references DEPARTMENT(Dnumber)
 );
+
+insert into DEPARTMENT values ('AI',1,11,'19-02-2024'),('CY',2,12,'20-02-2024'),('DS',3,13,'21-02-2024'),('ML',4,14,'22-02-2024'); 
+
+insert into EMPLOYEE values ('Hemanth','Gowda',101,'Los_Angeles','Male',1000000,201,1),('Mara','Lingeshwar',102,'Andaman_Nicobar','shemale',10000,202,2),('Namokar','Ramegouda',103,'Los_Vegas','hemale',1000,203,3),('Rajath','U',104,'Congress','Male',1000,204,4);  
+
+insert into DEPENDENT values ('AI',101),('CY',102),('DS',103),('ML',104);                                
