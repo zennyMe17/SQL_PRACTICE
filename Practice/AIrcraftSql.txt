@@ -15,4 +15,10 @@ create table CERTIFIED(
   	Aircraft_ID int,
   	FOREIGN KEY (Emp_ID) REFERENCES EMPLOYEE(Emp_ID),
   	FOREIGN KEY (Aircraft_ID ) REFERENCES AIRCRAFT(Aircraft_ID )
-)
+);
+
+insert into AIRCRAFT values (1,'Mirage-200',120),(2,'MIG-29',150),(3,'HAL Tejas',145),(4,'Jaguar',155);
+
+insert into EMPLOYEE values (101,'Hemanth',1000000), (102,'Mari',100000), (103,'Rajath',10000), (104,'Namokar',1000);
+
+insert into CERTIFIED values (101,4),(102,1),(104,2);
