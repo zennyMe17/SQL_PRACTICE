@@ -36,3 +36,17 @@ insert into DEPARTMENT values ('Artificial-Inteligence',21,31,'18-02-2023'),('Cy
 
 insert into EMPLOYEE values('Hemanth','Gowda',1,'LOS_ANGELS','Male',1000000,11,21),('Kattimani','Maralingeshwar',2,'Antartica','Male',100000,12,21),('U','Rajath',3,'Congress','HEMale',10000,13,23),('Ramegouda','Namokar',4,'Andaman_island','SHEMale',1000,14,24);
 
+insert into PROJECT values (41,'Generative-AI',21),(42,'Block-Chain',22),(43,'BMW',23),(44,'Royal-Mech',24);
+
+insert into WORKS_ON values (1,41,100), (2,41,138), (3,43,120), (4,44,135);
+
+-- 1st query
+select Fname, Lname FROM EMPLOYEE
+where salary > (select salary FROM EMPLOYEE where Dno=24);
+
+--2nd query
+select ESSN from WORKS_ON
+where Pno = 41 or Pno = 42 or Pno = 43;
+
+--3rd query
+select sum(Hours) FROM WORKS_ON;
