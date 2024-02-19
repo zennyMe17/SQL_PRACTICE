@@ -1,0 +1,25 @@
+select DEPARTMENT(
+	Dname varchar(25),
+  	Dnumber int primary key,
+  	MgrSSn int,
+  	MgrStartDAte
+);
+
+select EMPLOYEE (
+	Fname varchar(25),
+  	Lname varchar(25),
+  	SSN int primary key,
+  	Addrs varchar(25),
+  	sex varchar(25),
+  	salary int,
+  	SuperSSN int,
+  	Dno int,
+  	foreign key (Dno) references DEPARTMENT(Dnumber)
+);
+
+select DEPENDENT(
+	Dname varchar(25),
+  	ESSN int,
+  	foreign key (ESSN) refrences EMPLOYEE(SSN),
+  	foreign key (Dname) references 
+);
