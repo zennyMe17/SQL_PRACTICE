@@ -1,11 +1,12 @@
-select DEPARTMENT(
+
+create table DEPARTMENT(
 	Dname varchar(25),
   	Dnumber int primary key,
   	MgrSSn int,
-  	MgrStartDAte
+  	MgrStartDAte varchar(25)
 );
 
-select EMPLOYEE (
+create table EMPLOYEE (
 	Fname varchar(25),
   	Lname varchar(25),
   	SSN int primary key,
@@ -17,9 +18,9 @@ select EMPLOYEE (
   	foreign key (Dno) references DEPARTMENT(Dnumber)
 );
 
-select DEPENDENT(
+create table  DEPENDENT(
 	Dname varchar(25),
   	ESSN int,
-  	foreign key (ESSN) refrences EMPLOYEE(SSN),
-  	foreign key (Dname) references 
+  	foreign key (ESSN) references EMPLOYEE(SSN),
+  	foreign key (Dname) references DEPARTMENT(Dname)
 );
