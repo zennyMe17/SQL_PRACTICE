@@ -1,0 +1,33 @@
+create table AIRCRAFT(
+	Aircraft_ID int primary key,
+  	Aircraft_name varchar(24),
+  	Crusing_range int
+);
+
+create table EMPLOYEE(
+	Emp_ID int primary key,
+  	E_name varchar(24),
+  	Salary int
+);
+
+create table CERTIFIED(
+	Emp_ID int,
+  	Aircraft_ID int,
+  	FOREIGN KEY (Emp_ID) REFERENCES EMPLOYEE(Emp_ID),
+  	FOREIGN KEY (Aircraft_ID ) REFERENCES AIRCRAFT(Aircraft_ID )
+);
+
+insert into AIRCRAFT values (1,'Mirage-200',120),(2,'MIG-29',150),(3,'HAL Tejas',145),(4,'Jaguar',155);
+
+insert into EMPLOYEE values (101,'Hemanth',1000000), (102,'Mari',100000), (103,'Rajath',10000), (104,'Namokar',1000);
+
+insert into CERTIFIED values (101,4),(102,1),(104,2);
+
+-- 1st query
+select E_name FROM EMPLOYEE
+where Emp_ID in (select Emp_ID FROM CERTIFIED);
+
+--2nd query
+select * FROM AIRCRAFT ORDER BY Crusing_range ASC;
+
+--3rd query
