@@ -22,5 +22,5 @@ create table  DEPENDENT(
 	Dname varchar(25),
   	ESSN int,
   	foreign key (ESSN) references EMPLOYEE(SSN),
-  	foreign key (Dname) references DEPARTMENT(Dname)
+  	foreign key (Dname) references DEPARTMENT(Dnumber)
 );
