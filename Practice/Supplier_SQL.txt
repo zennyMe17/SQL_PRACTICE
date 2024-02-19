@@ -17,3 +17,9 @@ create table SHIPMENT(
   	foreign key (Sid) references SUPPLIER(Sid),
   	foreign key (PID) references PART(PID)
 );
+
+insert into PART values (1,'A','Red'), (2,'B','Green'),(3,'C','Blue'),(4,'D','Yellow');
+
+insert into SUPPLIER values (101,'Hemanth','Los_Angeles'),(102,'Namokar','Los_Vegas'),(103,'Rajath','Khalistan'),(104,'Mari','Andaman');
+
+insert into SHIPMENT values (101,2,1000000),(102,3,10000),(103,4,10000);
