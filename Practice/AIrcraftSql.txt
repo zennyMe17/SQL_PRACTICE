@@ -22,3 +22,21 @@ insert into AIRCRAFT values (1,'Mirage-200',120),(2,'MIG-29',150),(3,'HAL Tejas'
 insert into EMPLOYEE values (101,'Hemanth',1000000), (102,'Mari',100000), (103,'Rajath',10000), (104,'Namokar',1000);
 
 insert into CERTIFIED values (101,4),(102,1),(104,2);
+
+-- 1st query
+select E_name from EMPLOYEE
+where salary = (select max(Salary) from EMPLOYEE); 
+
+-- 2nd query
+select Aircraft_name FROM AIRCRAFT
+join (select salary,Aircraft_ID FROM EMPLOYEE 
+           join CERTIFIED ON EMPLOYEE.Emp_ID = CERTIFIED.Emp_ID) AS NEW_TABLE
+ON AIRCRAFT.Aircraft_ID = NEW_TABLE.Aircraft_ID
+where salary > 100000;
+
+-- 3rd query
+select E_name FROM EMPLOYEE
+where Emp_ID not in (select Emp_ID from CERTIFIED);
+
+
+
