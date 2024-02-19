@@ -1,0 +1,18 @@
+create table AIRCRAFT(
+	Aircraft_ID int primary key,
+  	Aircraft_name varchar(24),
+  	Crusing_range int
+);
+
+create table EMPLOYEE(
+	Emp_ID int primary key,
+  	E_name varchar(24),
+  	Salary int
+);
+
+create table CERTIFIED(
+	Emp_ID int,
+  	Aircraft_ID int,
+  	FOREIGN KEY (Emp_ID) REFERENCES EMPLOYEE(Emp_ID),
+  	FOREIGN KEY (Aircraft_ID ) REFERENCES AIRCRAFT(Aircraft_ID )
+)
