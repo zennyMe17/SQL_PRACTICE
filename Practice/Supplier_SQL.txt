@@ -33,3 +33,9 @@ where Color = 'Green';
 SELECT Sname,COUNT(*) from SUPPLIER
 join SHIPMENT on SUPPLIER.Sid = SHIPMENT.Sid
 group by SUPPLIER.Sname;
+
+
+-- 3rd Query
+update PART
+set Color='Yellow'
+where PID in (select PID from SHIPMENT where sid = 102);
